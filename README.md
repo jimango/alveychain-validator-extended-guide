@@ -81,7 +81,7 @@ Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private
 <br>
 <br>
 
-## Additional steps by Jimango to set up very basic security for your VPS
+## Additional custom steps to set up very basic security for your VPS
 
 These following steps are my addition to the origianl tutorial.
 
