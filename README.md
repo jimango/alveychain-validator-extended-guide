@@ -34,7 +34,7 @@ You might want to install a few dependencies before you get started with the set
 | |`apt update`                    | Updates the repositor so that you can install the newest version of that you later want to install.                              |
 | |`apt install git`               | Installes the package git. Necessary for being able to extracting the validater files from the official validator github page.   |
 | |`apt install curl`              | Installes the package curl. Necessary for being able to run the validator installation scripts successfully.                     |
-| |`apt update && apt upgrade`     | If the results after this suggest that you restart the server you can reboot the server with the following commnad.              |
+| |`apt update && apt upgrade`     | If the results after this suggest that you restart the server you can reboot the server with the following commnad, in next step.|
 | |`reboot`                        | This reboots the server and you will need to log in as root again. Be aware that it can take some time to fully reboot.
 
 <br>
