@@ -25,7 +25,22 @@ You should also have been provided your VPS login info, of how to log in with th
 <br>
 <br>
 
-## Before you Start
+## Requirements
+
+You might want to install a few dependencies before you get started with the setup of the validator:
+
+| |Necessary packages to run the install |                                                                                                                          | |
+|-|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------|-|
+| |`apt update`                    | Updates the repositor so that you can install the newest version of that you later want to install.                              |
+| |`apt install git`               | Installes the package git. Necessary for being able to extracting the validater files from the official validator github page.   |
+| |`apt install curl`              | Installes the package curl. Necessary for being able to run the validator installation scripts successfully.                     |
+| |`apt update && apt upgrade`     | It the results after this suggest that you restart the server you can reboot the server with the following commnad.              |
+| |`reboot`                       | This reboots the server and you will need to log in as root again. Be aware that it can take some time to fully reboot.
+
+<br>
+<br>
+
+## Before you Start - the actuall setup of the validator
 
 You and you alone are responsible for securing the server where your Alvey Validator Node is hosted. 
 There are many guides available on the internet and youtube tutorials that can help you through hardening your VPS. Here are just a few examples to get you started but there are many more. 
@@ -54,7 +69,7 @@ Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private
 
 <br>
 
-## Main Validator setup - How to Use
+## Validator setup - How to Use
 
 1. SSH into you're newly created VM
 2. Run `git clone https://github.com/AlveyCoin/validator && cd validator`
@@ -86,7 +101,7 @@ Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private
 
 ## Additional custom steps to set up very basic security for your VPS
 
-These following steps are my addition to the origianl tutorial.
+These following steps are my addition to the origianl tutorial, as a community member's addition. The intention of these extra steps it to make an easy to use guide for all that ask in main TG chat, and that are new to the world of Ubuntu (linux) and such server commands.
 
 <br>
 
