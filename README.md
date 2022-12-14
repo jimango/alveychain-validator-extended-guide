@@ -1,9 +1,17 @@
 # AlveyChain Validator Setup steps <br><br> jimango's extended version
 
-The beginning of this tutorial is the very same as the 'Validator node setup script for Alvey Chain' that you can find at https://github.com/AlveyCoin/validator
+<i>The core of this tutorial is the very same as the 'Validator node setup script for Alvey Chain' that you can find at https://github.com/AlveyCoin/validator .
 
-But I added a few steps at the end to make it easier for others to set up the basic security of the server. And by this make the server a bit more secure.
+Which means this extended guide will still use the codes to collect files and run the validator setup directly from the original AlveyCoin/validator page. My only addition in this fork (copy) is the README file</i> so people with now Ubuntu or linux server experience can easier get their head around how to set up the validator.
+
+<br>
+
+## What I added in this tutorial
+
+I added a few steps at the end to make it easier for others to set up the basic security of the server. And by this make the server a bit more secure.
 I do recommend everyone to follow the links just below to learn more about how to improve the security and maybe learn a bit more about how to manouver in an Ubuntu (linux) environment.
+
+<br>
 
 ## First
 
@@ -14,7 +22,7 @@ You should also have been provided your VPS login info, of how to log in with th
 <br>
 <br>
 
-## Now, Before you Start
+## Now - Before you Start
 
 You and you alone are responsible for securing the server where your Alvey Validator Node is hosted. 
 There are many guides available on the internet and youtube tutorials that can help you through hardening your VPS. Here are just a few examples to get you started but there are many more. 
@@ -23,6 +31,8 @@ There are many guides available on the internet and youtube tutorials that can h
 [Securing Your Linux VPS](https://www.digitalocean.com/community/tutorials/an-introduction-to-securing-your-linux-vps)
 [Hardening Access to Your Server | Linux Security Tutorial](https://www.youtube.com/watch?v=eeaFoZlSq6I)
 [5 Steps to Secure Linux (protect from hackers)](https://www.youtube.com/watch?v=ZhMw53Ud2tY)
+
+<br>
 
 ## Private Keys 
 
@@ -39,7 +49,6 @@ The final step in the install script will print on screen your `Private Key` and
 
 Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private key to metamask to collect earnings from running your validator.
 
-<br>
 <br>
 
 ## Main Validator setup - How to Use
@@ -59,6 +68,8 @@ Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private
      Loaded: loaded (/etc/systemd/system/alvey.service; disabled; vendor preset: enabled)
      Active: active (running) since Mon 2022-11-21 19:56:48 UTC; 8s ago` 
 
+<br>
+
 ## Minimum system requirements
 
 | Type | Value                                                                                          | Influenced by                                                                                                                |
@@ -69,9 +80,12 @@ Once again NEVER SHARE YOUR PRIVATE KEY WITH ANYONE! You can import this private
 
 <br>
 <br>
-<br>
 
 ## Additional steps by Jimango to set up very basic security for your VPS
+
+These following steps are my addition to the origianl tutorial.
+
+<br>
 
 ## The steps we will be doing
 We want to make some changes to the server to improve the basic security of our server a bit.
@@ -89,14 +103,15 @@ This way you can also learn how to confirm all steps you do from legitim sources
 This will make it safer when taking guidance and advices from others that you can not blindly turst.
 </i>
 
+<br>
+<br>
+
 ## Why
 The security of this server is important since it will contain the information required to have control of your validator wallet and setup.
-<br>
-<br>
+
 <br>
 
-
-## First - User setup:
+## First - The new user setup:
 In this example we make a user named sammy, you should of course choose some other username that you are comfortable with using.
 
 | Step | Commands                          | Reason                                                                                                                                                  |
@@ -117,10 +132,8 @@ https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enable
 <i>(this is for 22.04 Ubuntu, but its still valid for 20.04 Ubuntu with my explaination above)</i>
 
 Remember to user Ubuntu 20.04 server when setting up the server.
-<br>
-<br>
-<br>
 
+<br>
 
 ## Secondly - Remove access for root to log in remotly:
 This makes it harder for malicious login software to get access to your server by randomly testing for passwords matching the user root.
