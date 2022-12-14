@@ -1,8 +1,11 @@
-# AlveyChain Validator Setup steps <br><br> jimango's extended version
+# AlveyChain Validator Setup <br><br> Extended version
+<i>This is a community added tutorial for how to set up the AlveyChain validator at a Ubuntu (linux server)</i>
 
-<i>The core of this tutorial is the very same as the 'Validator node setup script for Alvey Chain' that you can find at https://github.com/AlveyCoin/validator .
+This extended version adds a tutorial how to set up a new user and remove direct login possibilities for root. As a step to be done after first having set up the validator in root. Normally in linux we dont install new applications in root, but this has proven to be the only current solution for getting the validator set up successfully. I therefor advice new users who dont know how to operate a server also to include these very basic steps to enhance their security of the server you use for setting up the validator.
 
-Which means this extended guide will still use the codes to collect files and run the validator setup directly from the original AlveyCoin/validator page. My only addition in this fork (copy) is the README file</i> so people with now Ubuntu or linux server experience can easier get their head around how to set up the validator.
+The core of this tutorial is the very same as the 'Validator node setup script for Alvey Chain' that you can find at https://github.com/AlveyCoin/validator .
+
+Which means this extended guide will still collect files and run the validator setup directly from the original AlveyCoin/validator page. My only addition in this fork (copy) is the README file, so people with no Ubuntu or linux server experience can easier get their head around how to set up the validator. And improve the basic security.
 
 <br>
 
@@ -22,7 +25,7 @@ You should also have been provided your VPS login info, of how to log in with th
 <br>
 <br>
 
-## Now - Before you Start
+## Before you Start
 
 You and you alone are responsible for securing the server where your Alvey Validator Node is hosted. 
 There are many guides available on the internet and youtube tutorials that can help you through hardening your VPS. Here are just a few examples to get you started but there are many more. 
