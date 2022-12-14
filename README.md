@@ -160,7 +160,7 @@ Each time after switching to the other user (root or new user) you should always
 
 For example, you log into your server using putty and the new user you set up. Then you want to switch to the root user and it's home folder:
 
-Type `su` and press Enter, type `cd` and press Enter
+Type `su` and press Enter, type `cd` and press Enter. After this you should be in your root folder where you first started the Validator setup.
 
 The name in the beginning of the line where you write will show the name of the user that you are currently logged in with.
 
