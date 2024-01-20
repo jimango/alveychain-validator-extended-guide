@@ -195,7 +195,101 @@ Type `su` and press Enter, type `cd` and press Enter. After this you should be i
 
 The name in the beginning of the line where you write will show the name of the user that you are currently logged in with.
 
-<br>
+# Firewall Configuration
+<i>(Please note that this section is valid for Ubuntu OS as <b>ufw</b> is the default firewall configuration tool for Ubuntu. If you use another distribution, you will have to adapt the commands by yourself)</i>
+
+In this guide, we will assume you use your server only for Alvey Validator node, so the only ports that should be accessible in your server are:
+
+* <b>22/TCP</b> (for remote ssh connection)
+* <b>30303/TCP</b> (for validator program)  
+* <b>30303/UDP</b> (for validator program)
+
+First of all, you have to check the status of your server's firewall with the following command:
+
+`sudo ufw status`
+
+There is 2 possible outcome to this command:
+
+| Section                                    | Firewall Status | Screenshot                                                  |
+|--------------------------------------------|-----------------|-------------------------------------------------------------|
+| [1](#configuration-with-inactive-firewall) | Inactive        | ![Inactive Firewall](assets/inactive-firewall.png?raw=true) |
+| [2](#configuration-with-active-firewall)                                        | Active          | ![Active Firewall](assets/active-firewall.png?raw=true)     |
+
+If your firewall is inactive, follow the steps in [Configuration with inactive firewall](#configuration-with-inactive-firewall)
+
+If your firewall is already active, follow the steps in [Configuration with active firewall](#configuration-with-active-firewall)
+
+
+## Configuration with inactive firewall
+Before enabling firewall you have to verify if there is no rules existing (because enabling the firewall with incorrect rules could kick you out of your server access and you don't want that 😊).
+
+First, check the result of the command:
+`sudo ufw show added`
+
+If the result show no rule (None):  
+![No Rule](assets/no-rule-firewall.png?raw=true)  
+you can jump to the section [Configure the rules](#configure-the-rules)
+
+Otherwise, you have to take care of the existing rules by removing them.
+
+### Delete unneeded rules
+With <b>ufw</b>, you can delete existing rules with the following command:  
+`sudo ufw delete NAME_OF_THE_RULE`
+
+Let's assume you have the following existing rules:  
+![Unneeded rules](assets/unneeded-rules-firewall.png?raw=true)
+
+You can then delete them with the following commands:  
+`sudo ufw delete allow 1478/tcp`  
+`sudo ufw delete allow 443/tcp`
+
+Then, check again the remaining existing rules, with:  
+`sudo ufw show added`
+
+and if the result is "None", you can go the [next section](#configure-the-rules)
+
+### Configure the rules
+Now, you can add the needed rules for alvey validator program (and remote access through ssh) with the following commands:  
+`sudo ufw allow 22/tcp`  
+`sudo ufw allow 30303/tcp`  
+`sudo ufw allow 30303/udp`  
+
+Then review, the result with:  
+`sudo ufw show added`
+
+You should obtain this:  
+![Needed rules](assets/needed-rules-firewall.png?raw=true)
+
+If everything is ok, you can go the [next section](#enable-firewall)
+### Enable firewall
+Enable the firewall on your server with the following command:  
+`sudo ufw enable` (<i>answer 'yes' to the prompted confirmation</i>)
+
+Finally, review that everything is in order with:  
+`sudo ufw status`
+
+You should obtain this result:  
+![Final Config](assets/final-configuration-firewall.png?raw=true)
+
+That's it ! your firewall is now up & running and only the needed ports for alvey validator program are opened.
+
+## Configuration with active firewall
+
+If you firewall is already active, you should see what ports are authorized on your server with the result of the command:  
+`sudo ufw status`
+
+If you spot some unneeded ports (i.e., other ports than those listed in the [Firewall](#firewall-configuration) section), you can delete them by using command listed in the [Delete unneeded rules](#delete-unneeded-rules) section.  
+<b>Just be extremely careful not to remove the 22/tcp port, otherwise you will lose the possibility to access your server remotely through SSH</b>
+
+Then, you just have to configure the needed ports by following the procedure listed in the [Configure the rules](#configure-the-rules) section.
+
+Finally, review that everything is in order with:  
+`sudo ufw status`
+
+You should obtain this result:  
+![Final Config](assets/final-configuration-firewall.png?raw=true)
+
+That's it ! your firewall is now up & running and only the needed ports for alvey validator program are opened.
 
 ## Good luck!
 
